@@ -1,13 +1,8 @@
-FROM ubuntu:18.04
+FROM centos:centos7.9.2009
 
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y python3
-
+RUN yum update -y && yum install -y python3
 COPY pi.py /code/pi.py
-
 RUN chmod +rx /code/pi.py
 
 ENV PATH "/code:$PATH"
-
 
